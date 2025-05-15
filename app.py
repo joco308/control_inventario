@@ -53,6 +53,11 @@ class Search:
             bgcolor="#4CAF50",
             color="#FFFFFF"
         )
+    
+    def precio(self):
+        return ft.Text(
+            value= self.date.iloc[1]
+        )
 
 class SearchInv(Search):
     def __init__(self, name):
@@ -168,7 +173,11 @@ def lis_print_search(list):
                 content=ft.Row(
                     controls=[
                         i.text(),
+                        ft.Row(
+                            
+                            ),
                         i.cantidad(),
+                        i.precio(),
                         ft.Row(
                             controls=[
                                 i.text_field(),
@@ -275,7 +284,7 @@ def main(page:ft.Page):
 
     f_ref.current = ft.Text(
         value= f"{lg.cb.calc_total()} Bs.",
-        size=18,
+        size=25,
         color="#E0E0E0"
         )
 
@@ -344,8 +353,9 @@ def main(page:ft.Page):
                                             )
                                         ],
                                         width=page.window_width/2,
-                                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN
-                                    )
+                                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                                    ),
+                                    padding=ft.padding.all(10)
                                 )
                             ],
                             alignment=ft.MainAxisAlignment.SPACE_BETWEEN

@@ -2,16 +2,24 @@ import flet as ft
 import pandas as pd
 
 data = pd.read_csv("farmacia_liam.csv")
+dataCopy = data.copy()
 
 
 #acciones importantes
 def delate_car_buy(n):
     global cb
-    global colum
     for i , name in enumerate(cb.list_buy):
         if name[2] == n:
             del cb.list_buy[i]
 
+
+def search_element(n):
+    list_search = dataCopy[dataCopy["Nombre"].str.contains(n)]
+    return list_search
+def save_changes(e):
+    data = dataCopy.copy()
+    data.to_csv("farmacia_liam.csv",encoding="utf-8",index=False)
+    
 
 
 class CarBuy:
@@ -22,8 +30,11 @@ class CarBuy:
 
     def add_list_buy(self,obj,cantidad):
         if int(obj["Cantidad"]) < cantidad:
+            print("hola")
             return 0
         self.list_buy.append([obj,cantidad,obj.iloc[0]])
+        dataCopy.loc[dataCopy["Nombre"]==obj["Nombre"],"Cantidad"]=obj["Cantidad"]-cantidad
+        #print(dataCopy.loc[dataCopy["Nombre"]==obj["Nombre"]])
 
     def calc_total(self):
         total = 0
@@ -33,9 +44,9 @@ class CarBuy:
         return self.total
 
     def buying(self):
-        for i in self.list_buy:
-            data.iloc[i[0].name]=int(i[0].loc["Cantidad"])-i[1]
+        data = dataCopy.copy()
         data.to_csv("farmacia_liam.csv",encoding="utf-8",index=False)
+        self.list_buy = []
         self.total_earnings += self.total
         self.total = 0
 
@@ -45,11 +56,13 @@ class CarBuy:
 
 
 
+
 cb = CarBuy()
 
 
-cb.add_list_buy(data[data["Nombre"].str.contains("TAYPIREC")].iloc[0],2)
-cb.add_list_buy(data[data["Nombre"].str.contains("COLGATE FAMILIAR 180 gr")].iloc[0],1)
+
+""" cb.add_list_buy(dataCopy[dataCopy["Nombre"].str.contains("taypirec")].iloc[0],2)
+cb.add_list_buy(dataCopy[dataCopy["Nombre"].str.contains("COLGATE FAMILIAR 180 gr".lower())].iloc[0],1) """
 #list_print_buy(cb.list_buy)
 
-#print(cb.list_buy)
+#print(data[data["Nombre"]=="taypirec"].iloc[0].loc["Nombre"])

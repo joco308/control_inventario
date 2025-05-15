@@ -1,72 +1,72 @@
 Nombre,Costo,Cantidad,Fecha-V
-TAYPIREC,2.5,3.0,
-VIOLETA DE GENCIANA,5.0,,
-MIGRANOL,2.0,,
-ALIVIOL EN CAPSULA,3.0,,
-4 DERM CREMA,42.0,,
-METRONIDAZOL OVULOS,4.0,,
-REUTER CREMA,5.0,,
-CHUPETE DE MIEL,1.0,,
-MENTIZAN EN BOTE,37.0,,
-CURITAS,0.5,,
-QUETEROL 30 mg SUBLINGUAL,5.5,,
-TALCO SAK,12.0,,
-CREMA LEON,25.0,,
-PARCHE LEON,22.0,,
-COLGATE FAMILIAR 180 gr,18.5,9,
-COLGATE DE 90 gr,12.5,,
-COLGATE 50 gr,8.5,,
-COLGATE PLAX ENGUAJE,40.0,,
-SHAMPUO JOONSON PEQUEÑO,37.5,,
-SHAMPUO JOONSON GRANDE,60.0,,
-GEL FIXER,5.0,,
-REXONA ROLL,22.0,,
-AXE,27.0,,
-KOTEX NOCTURNA,18.5,,
-ALIKAL,5.5,,
-DOLORSON,11.0,,
-BAHIA BB,8.0,,
-BAHIA 90,8.0,,
-BAHIA 90 CON MAQUILLAJE,8.0,,
-JABON LIQUIDO,17.0,,
-LUX,8.0,,
-PLIN PLIN,10.0,,
-BACELINA BLANCA,6.0,,
-JHONSOON TALCO,38.0,,
-TOALLITAS HUMEDAS HUGGIES,39.0,,
-CEPILLO COLGATE NIÑOS,10.0,,
-CEPILLO COLGATE,7.0,,
-CEPILLO JULIANA,5.0,,
-KOTEX,13.0,,
-NOSOTRAS,15.0,,
-AMOXICILINA 500 MG CAPSULA,1.0,,
-DEXAMETAZONA 0.5 mg,1.5,,
-DICLOFENACO SODICO,1.0,,
-IBUPROFENO D 400mg,1.0,,
-omeprazol 20 mg,1.0,,
-test de embarazo,10.0,,
-IBUPROFENO susp. 100 mg,21.0,,
-POMADA ESCALDANTE PEDIAGLOS,12.0,,
-AGUA OXIGENADA 60 ml,6.0,,
-ALCOHOL MEDICINAL 60 ml,7.0,,
-AMOXICILINA 600/500 mg,25.0,,
-AMOXICILINA 69/250 mg,23.0,,
-DICLOFENACO SODICO GEL 1%,18.0,,
-PARACETAMOL GOTAS 15 ml,12.0,,
-DEXTROMETORFANO,23.0,,
-IBUPROFENO FORTE susp.,25.0,,
-JARABE DE HUIRA HUIRA,32.0,,
-PARACETAMOL JARABE 60 ML,18.0,,
-PARACETAMOL COMP. 500 mg,1.0,,
-JERINGA 1 ML,1.5,,
-JERINGA 3ML,1.0,,
-JERINGA 10 ML,1.5,,
-MICROPORE 1/2 PUL,13.0,,
-ALGODÓN 10 g,2.0,,
-compresa gasa 10 x 10 cm,7.0,,
-compresa gasa 7.5 x 7.5,5.0,,
-compresa gasa 5x5,3.0,,
-levonogestrel 1.5 mg,24.0,,
-ceftriaxona vial,18.0,,
-keterolaco inyectable 30 mg,12.0,,
-sales de rehidratacion,6.0,,
+taypirec,2.5,11.0,2024-06-15
+violeta de genciana,5.0,12.0,2024-11-30
+migranol,2.0,5.0,2025-01-20
+aliviol en capsula,3.0,8.0,2024-09-10
+4 derm crema,42.0,2.0,2025-03-25
+metronidazol ovulos,4.0,6.0,2024-07-18
+reuter crema,5.0,10.0,2024-12-05
+chupete de miel,1.0,20.0,2024-08-22
+mentizan en bote,37.0,1.0,2025-05-30
+curitas,0.5,50.0,2026-02-15
+queterol 30 mg sublingual,5.5,15.0,2024-10-10
+talco sak,12.0,4.0,2025-07-12
+crema leon,25.0,3.0,2024-09-05
+parche leon,22.0,7.0,2025-01-15
+colgate familiar 180 gr,18.5,9.0,2024-12-20
+colgate de 90 gr,12.5,6.0,2025-02-28
+colgate 50 gr,8.5,12.0,2024-11-15
+colgate plax enjuague,40.0,3.0,2025-04-10
+shampuo joonson pequeño,37.5,5.0,2024-10-30
+shampuo joonson grande,60.0,2.0,2025-06-18
+gel fixer,5.0,8.0,2024-08-05
+rexona roll,22.0,4.0,2025-03-15
+axe,27.0,6.0,2024-09-22
+kotex nocturna,18.5,10.0,2025-01-10
+alikal,5.5,7.0,2024-07-30
+dolorson,11.0,5.0,2024-11-25
+bahia bb,8.0,15.0,2025-02-10
+bahia 90,8.0,12.0,2024-10-05
+bahia 90 con maquillaje,8.0,9.0,2025-04-20
+jabon liquido,17.0,6.0,2024-12-15
+lux,8.0,20.0,2025-05-05
+plin plin,10.0,8.0,2024-08-18
+bacelina blanca,6.0,10.0,2025-03-10
+jhonsoon talco,38.0,3.0,2024-09-30
+toallitas humedas huggies,39.0,4.0,2025-07-22
+cepillo colgate niños,10.0,7.0,2024-11-10
+cepillo colgate,7.0,12.0,2025-01-25
+cepillo juliana,5.0,15.0,2024-10-15
+kotex,13.0,8.0,2025-02-05
+nosotras,15.0,6.0,2024-12-30
+amoxicilina 500 mg capsula,1.0,30.0,2024-08-10
+dexametazona 0.5 mg,1.5,25.0,2025-04-05
+diclofenaco sodico,1.0,20.0,2024-09-12
+ibuprofeno d 400mg,1.0,18.0,2025-03-18
+omeprazol 20 mg,1.0,22.0,2024-11-20
+test de embarazo,10.0,5.0,2025-06-30
+ibuprofeno susp. 100 mg,21.0,3.0,2024-10-25
+pomada escaldante pediaglos,12.0,4.0,2025-05-15
+agua oxigenada 60 ml,6.0,8.0,2024-07-20
+alcohol medicinal 60 ml,7.0,10.0,2025-01-30
+amoxicilina 600/500 mg,25.0,2.0,2024-12-10
+amoxicilina 69/250 mg,23.0,3.0,2025-02-20
+diclofenaco sodico gel 1%,18.0,5.0,2024-08-30
+paracetamol gotas 15 ml,12.0,7.0,2025-04-15
+dextrometorfano,23.0,4.0,2024-09-05
+ibuprofeno forte susp.,25.0,3.0,2025-03-28
+jarabe de huira huira,32.0,2.0,2024-10-12
+paracetamol jarabe 60 ml,18.0,6.0,2025-01-15
+paracetamol comp. 500 mg,1.0,25.0,2024-11-30
+jeringa 1 ml,1.5,50.0,2026-01-10
+jeringa 3ml,1.0,40.0,2025-08-20
+jeringa 10 ml,1.5,30.0,2025-09-15
+micropore 1/2 pul,13.0,10.0,2025-07-05
+algodón 10 g,2.0,20.0,2026-03-30
+compresa gasa 10 x 10 cm,7.0,15.0,2025-05-20
+compresa gasa 7.5 x 7.5,5.0,12.0,2024-12-05
+compresa gasa 5x5,3.0,25.0,2025-02-15
+levonogestrel 1.5 mg,24.0,8.0,2024-10-30
+ceftriaxona vial,18.0,5.0,2025-04-25
+keterolaco inyectable 30 mg,12.0,6.0,2024-11-15
+sales de rehidratacion,6.0,10.0,2025-06-10

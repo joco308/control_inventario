@@ -26,13 +26,15 @@ class Search:
     def text(self):
         return ft.Text(
             f"{str(self.date.iloc[0])}",
-            width=300
+            width=300,
+            color="#E0E0E0"
         )
     
     def cantidad(self):
         return ft.Text(
             f"{str(self.date.iloc[2])}",
-            width=70
+            width=70,
+            color="#E0E0E0"
         )
     
     def text_field(self):
@@ -58,7 +60,8 @@ class Search:
     def precio(self):
         return ft.Text(
             value= self.date.iloc[1],
-            width=80
+            width=80,
+            color="#E0E0E0"
         )
 
 class SearchInv(Search):
@@ -67,7 +70,8 @@ class SearchInv(Search):
         self.cantidadt = int(self.date.iloc[2])
     def fecha_ven(self):
         return ft.Text(
-            f"{self.date.iloc[3]}"
+            f"{self.date.iloc[3]}",
+            color="#E0E0E0"
         )
     
     def change_value(self, e):
@@ -100,16 +104,17 @@ spacing = ft.Text(
     value="|",
     size=20,
     weight=ft.FontWeight.BOLD,
-    width=10
+    width=10,
+    color="#E0E0E0"
 )
 
 
 #elementos que se actualizan
 f_ref = ft.Ref[ft.Text]()
 
-colum = ft.Column(controls=[ft.Text("Carrito de compra")],scroll=True,height=460)
-columSearch = ft.Column(controls=[ft.Text("Busqueda")],scroll=ft.ScrollMode.AUTO)
-columSearchInv = ft.Column(controls=[ft.Text("Busca para agregar o reducir inventario")],scroll=True,height=700)
+colum = ft.Column(controls=[ft.Text("Carrito de compra",color="#E0E0E0")],scroll=True,height=460)
+columSearch = ft.Column(controls=[ft.Text("Busqueda",color="#E0E0E0")],scroll=ft.ScrollMode.AUTO)
+columSearchInv = ft.Column(controls=[ft.Text("Busca para agregar o reducir inventario",color="#E0E0E0")],scroll=True,height=700)
 
 #logic
 def relizar_compra(e):
@@ -170,11 +175,11 @@ def list_print_buy(list):
     for x in list:
         listPrint.append(ft.Row(
             controls=[
-                ft.Text(f"{x[0].iloc[0]}"),
+                ft.Text(f"{x[0].iloc[0]}",color="#E0E0E0"),
                 ft.Row(
                     controls=[
-                        ft.Text(f"{x[1]}"),
-                        ft.Text(f"{x[1]*x[0].iloc[1]} Bs."),
+                        ft.Text(f"{x[1]}",color="#E0E0E0"),
+                        ft.Text(f"{x[1]*x[0].iloc[1]} Bs.",color="#E0E0E0"),
                         buton_create(x)
                     ],
                     spacing=30,
@@ -302,12 +307,12 @@ def app_bar(page :ft.Page):
     )
 
 def main(page:ft.Page):
+    page.bgcolor = "#1E1E2E"
     page.title = "Farmacia"
     page.window_width = 1200 
     page.window_height = 700
     page.window_min_width = 800  
     page.window_min_height = 600
-    page.bgcolor = "#1E1E2E"
 
     global f_ref,columSearch
 
@@ -350,24 +355,28 @@ def main(page:ft.Page):
                                             controls=[
                                                 ft.Text(
                                                     value="Producto",
-                                                    size=15
+                                                    size=15,
+                                                    color="#E0E0E0"
                                                 ),
                                                 ft.Row(
                                                     controls=[
                                                         spacing,
                                                         ft.Text(
                                                             value="Cantidad",
-                                                            size=15
+                                                            size=15,
+                                                            color="#E0E0E0"
                                                         ),
                                                         spacing,
                                                         ft.Text(
                                                             value="Precio",
-                                                            size=15
+                                                            size=15,
+                                                            color="#E0E0E0"
                                                         ),
                                                         spacing,
                                                         ft.Text(
                                                             value="Eliminar",
-                                                            size=15
+                                                            size=15,
+                                                            color="#E0E0E0"
                                                         ),
                                                     ],
                                                     spacing=20,
@@ -446,19 +455,22 @@ def main(page:ft.Page):
                                         ft.Text(
                                             value="Producto",
                                             width=280,
-                                            size=17
+                                            size=17,
+                                            color="#E0E0E0"
                                         ),
                                         spacing,
                                         ft.Text(
                                             value="Cantidad",
                                             width=80,
-                                            size=17
+                                            size=17,
+                                            color="#E0E0E0"
                                         ),
                                         spacing,
                                         ft.Text(
                                             value="Precio",
                                             width=75,
-                                            size=17
+                                            size=17,
+                                            color="#E0E0E0"
                                         )
                                     ],
                                     alignment= ft.MainAxisAlignment.SPACE_BETWEEN,
@@ -473,7 +485,8 @@ def main(page:ft.Page):
                     width=page.window_width,
                     alignment=ft.MainAxisAlignment.CENTER
                 )
-            ]
+            ],
+            bgcolor="#1E1E2E"
         )
 
     def inventario():
@@ -495,22 +508,26 @@ def main(page:ft.Page):
                                         ft.TextField(
                                             hint_text="Nombre del Producto",
                                             on_change=add_nombre,
-                                            width=187.5
+                                            width=187.5,
+                                            color="#E0E0E0"
                                         ),
                                         ft.TextField(
                                             hint_text="Costo",
                                             on_change=add_consto,
-                                            width=187.5
+                                            width=187.5,
+                                            color="#E0E0E0"
                                         ),                                        
                                         ft.TextField(
                                             hint_text="Cantidad",
                                             on_change=add_cantidad_,
-                                            width=187.5
+                                            width=187.5,
+                                            color="#E0E0E0"
                                         ),
                                         ft.TextField(
                                             hint_text="Fecha de V",
                                             on_change=add_fecha,
-                                            width=187.5
+                                            width=187.5,
+                                            color="#E0E0E0"
                                         ),
                                         ft.IconButton(
                                             icon=ft.Icons.ADD_OUTLINED,
@@ -546,14 +563,16 @@ def main(page:ft.Page):
                                     controls=[
                                         ft.Text(
                                             value="Producto",
-                                            size=17
+                                            size=17,
+                                            color="#E0E0E0"
                                         ),
                                         ft.Row(
                                             controls=[
                                                 spacing,
                                                 ft.Text(
                                                     value="Fecha de V.",
-                                                    size=17
+                                                    size=17,
+                                                    color="#E0E0E0"
                                                 ),
                                             ]
                                         )
@@ -566,12 +585,14 @@ def main(page:ft.Page):
                                     controls=[
                                         ft.Text(
                                             value="Cantidad",
-                                            size=17
+                                            size=17,
+                                            color="#E0E0E0"
                                         ),
                                         spacing,
                                         ft.Text(
                                             value="Añadir",
-                                            size=17
+                                            size=17,
+                                            color="#E0E0E0"
                                         )
                                     ],
                                     spacing=20
@@ -586,7 +607,8 @@ def main(page:ft.Page):
                     width=1200,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER
                 )
-            ]
+            ],
+            bgcolor="#1E1E2E"
         )
 
     def route_change(route):

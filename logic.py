@@ -12,6 +12,19 @@ def delate_car_buy(n):
         if name[2] == n:
             del cb.list_buy[i]
 
+def add_new_element(name,cnost,cant,fecha):
+    global dataCopy
+    new_date = {
+        "Nombre":name,
+        "Costo":cnost,
+        "Cantidad":cant,
+        "Fecha-V":fecha
+    }
+    print(new_date)
+
+    dataCopy = pd.concat([dataCopy, pd.DataFrame([new_date])],ignore_index=True)
+    print(dataCopy)
+
 
 def search_element(n):
     list_search = dataCopy[dataCopy["Nombre"].str.contains(n)]

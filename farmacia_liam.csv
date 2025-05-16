@@ -1,5 +1,5 @@
 Nombre,Costo,Cantidad,Fecha-V
-taypirec,2.5,12.0,2024-06-15
+taypirec,2.5,20.0,2024-06-15
 violeta de genciana,5.0,12.0,2024-11-30
 migranol,2.0,5.0,2025-01-20
 aliviol en capsula,3.0,8.0,2024-09-10
@@ -8,7 +8,7 @@ metronidazol ovulos,4.0,6.0,2024-07-18
 reuter crema,5.0,10.0,2024-12-05
 chupete de miel,1.0,20.0,2024-08-22
 mentizan en bote,37.0,1.0,2025-05-30
-curitas,0.5,100.0,2026-02-15
+curitas,0.5,101.0,2026-02-15
 queterol 30 mg sublingual,5.5,15.0,2024-10-10
 talco sak,12.0,4.0,2025-07-12
 crema leon,25.0,3.0,2024-09-05
@@ -52,12 +52,12 @@ alcohol medicinal 60 ml,7.0,10.0,2025-01-30
 amoxicilina 600/500 mg,25.0,2.0,2024-12-10
 amoxicilina 69/250 mg,23.0,3.0,2025-02-20
 diclofenaco sodico gel 1%,18.0,5.0,2024-08-30
-paracetamol gotas 15 ml,12.0,21.0,2025-04-15
+paracetamol gotas 15 ml,12.0,25.0,2025-04-15
 dextrometorfano,23.0,4.0,2024-09-05
 ibuprofeno forte susp.,25.0,3.0,2025-03-28
 jarabe de huira huira,32.0,2.0,2024-10-12
 paracetamol jarabe 60 ml,18.0,11.0,2025-01-15
-paracetamol comp. 500 mg,1.0,25.0,2024-11-30
+paracetamol comp. 500 mg,1.0,24.0,2024-11-30
 jeringa 1 ml,1.5,50.0,2026-01-10
 jeringa 3ml,1.0,40.0,2025-08-20
 jeringa 10 ml,1.5,30.0,2025-09-15
@@ -70,3 +70,4 @@ levonogestrel 1.5 mg,24.0,8.0,2024-10-30
 ceftriaxona vial,18.0,5.0,2025-04-25
 keterolaco inyectable 30 mg,12.0,6.0,2024-11-15
 sales de rehidratacion,6.0,10.0,2025-06-10
+chiquitolina,2.0,50.0,2024-07-15

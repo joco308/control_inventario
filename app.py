@@ -26,12 +26,13 @@ class Search:
     def text(self):
         return ft.Text(
             f"{str(self.date.iloc[0])}",
-
+            width=300
         )
     
     def cantidad(self):
         return ft.Text(
-            f"{str(self.date.iloc[2])}"
+            f"{str(self.date.iloc[2])}",
+            width=70
         )
     
     def text_field(self):
@@ -56,7 +57,8 @@ class Search:
     
     def precio(self):
         return ft.Text(
-            value= self.date.iloc[1]
+            value= self.date.iloc[1],
+            width=80
         )
 
 class SearchInv(Search):
@@ -93,13 +95,19 @@ class SearchInv(Search):
             border_color="#3A3A4A"
         )
     
-
+#Elementos constantes
+spacing = ft.Text(
+    value="|",
+    size=20,
+    weight=ft.FontWeight.BOLD,
+    width=10
+)
 
 
 #elementos que se actualizan
 f_ref = ft.Ref[ft.Text]()
 
-colum = ft.Column(controls=[ft.Text("Carrito de compra")])
+colum = ft.Column(controls=[ft.Text("Carrito de compra")],scroll=True,height=460)
 columSearch = ft.Column(controls=[ft.Text("Busqueda")],scroll=ft.ScrollMode.AUTO)
 columSearchInv = ft.Column(controls=[ft.Text("Busca para agregar o reducir inventario")],scroll=True,height=700)
 
@@ -111,6 +119,24 @@ def relizar_compra(e):
     columSearch.clean()
     columSearch.controls.extend(lis_print_search(search))
     columSearch.update()
+
+nombre_add=""
+cantidad_add=0
+fecha_add = ""
+consto_add = 0
+def add_nombre(e):
+    global nombre_add
+    nombre_add=e.control.value.lower()
+    print(nombre_add)
+def add_cantidad_(e):
+    global cantidad_add
+    cantidad_add=int(e.control.value)
+def add_fecha(e):
+    global fecha_add
+    fecha_add = e.control.value
+def add_consto(e):
+    global consto_add
+    consto_add= int(e.control.value)
 
 
 
@@ -172,12 +198,16 @@ def lis_print_search(list):
             ft.Container(
                 content=ft.Row(
                     controls=[
-                        i.text(),
                         ft.Row(
-                            
-                            ),
-                        i.cantidad(),
-                        i.precio(),
+                            controls=[
+                                i.text(),
+                                i.cantidad(),
+                                i.precio()
+                            ],
+                            spacing=20,
+                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                            width=300
+                        ),
                         ft.Row(
                             controls=[
                                 i.text_field(),
@@ -216,7 +246,6 @@ def list_print_inv(list):
                             ]
                         )
                     ],
-                    
                     alignment= ft.MainAxisAlignment.SPACE_BETWEEN,
                     spacing=20,
                     width=600
@@ -315,7 +344,43 @@ def main(page:ft.Page):
                     controls=[
                         ft.Column(
                             controls=[
-                                colum,
+                                ft.Column(
+                                    controls=[
+                                        ft.Row(
+                                            controls=[
+                                                ft.Text(
+                                                    value="Producto",
+                                                    size=15
+                                                ),
+                                                ft.Row(
+                                                    controls=[
+                                                        spacing,
+                                                        ft.Text(
+                                                            value="Cantidad",
+                                                            size=15
+                                                        ),
+                                                        spacing,
+                                                        ft.Text(
+                                                            value="Precio",
+                                                            size=15
+                                                        ),
+                                                        spacing,
+                                                        ft.Text(
+                                                            value="Eliminar",
+                                                            size=15
+                                                        ),
+                                                    ],
+                                                    spacing=20,
+                                                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                                                    #width=200
+                                                )                                                ],
+                                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                                            width=600
+                                        ),
+                                        colum
+                                    ],
+                                    alignment=ft.MainAxisAlignment.START
+                                ),
                                 ft.Container(
                                     bgcolor="#242434",
                                     content=ft.Row(
@@ -358,18 +423,47 @@ def main(page:ft.Page):
                                     padding=ft.padding.all(10)
                                 )
                             ],
-                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN
+                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                            spacing=0
                         ),
                         ft.Column(
                             controls=[
                                 ft.TextField(
                                     hint_text="Busqueda...",
                                     helper_text="No es necesario apretar (enter) busqueda automatica",
+                                    helper_style=ft.TextStyle(
+                                                    color=ft.Colors.with_opacity(0.5, "#A0A0B0")
+                                                ),
                                     on_change=busqueda,
                                     width=page.window_width/2,
                                     bgcolor="#2E2E3E",
                                     color="#E0E0E0",
-                                    border_color="#38384A"
+                                    border_color="#38384A",
+
+                                ),
+                                ft.Row(
+                                    controls=[
+                                        ft.Text(
+                                            value="Producto",
+                                            width=280,
+                                            size=17
+                                        ),
+                                        spacing,
+                                        ft.Text(
+                                            value="Cantidad",
+                                            width=80,
+                                            size=17
+                                        ),
+                                        spacing,
+                                        ft.Text(
+                                            value="Precio",
+                                            width=75,
+                                            size=17
+                                        )
+                                    ],
+                                    alignment= ft.MainAxisAlignment.SPACE_BETWEEN,
+                                    spacing=10
+                                    #width=600
                                 ),
                                 columSearch
                             ]
@@ -383,6 +477,11 @@ def main(page:ft.Page):
         )
 
     def inventario():
+        global nombre_add
+        global consto_add
+        global cantidad_add
+        global fecha_add
+
         return ft.View(
             "/inventario",
             [
@@ -391,24 +490,97 @@ def main(page:ft.Page):
                     controls=[
                         ft.Row(
                             controls=[
-                                ft.IconButton(
-                                    icon=ft.Icons.ADD_OUTLINED
+                                ft.Row(
+                                    controls=[
+                                        ft.TextField(
+                                            hint_text="Nombre del Producto",
+                                            on_change=add_nombre,
+                                            width=187.5
+                                        ),
+                                        ft.TextField(
+                                            hint_text="Costo",
+                                            on_change=add_consto,
+                                            width=187.5
+                                        ),                                        
+                                        ft.TextField(
+                                            hint_text="Cantidad",
+                                            on_change=add_cantidad_,
+                                            width=187.5
+                                        ),
+                                        ft.TextField(
+                                            hint_text="Fecha de V",
+                                            on_change=add_fecha,
+                                            width=187.5
+                                        ),
+                                        ft.IconButton(
+                                            icon=ft.Icons.ADD_OUTLINED,
+                                            on_click=lambda r: lg.add_new_element(nombre_add,consto_add,cantidad_add,fecha_add)
+                                        )
+                                    ],
+                                    width=900
                                 ),
                                 ft.ElevatedButton(
                                     text="Guardar",
-                                    on_click=lg.save_changes
+                                    on_click=lg.save_changes,
+                                    bgcolor="#1976D2",
+                                    color="#FFFFFF"
                                 )
-                            ]
+                            ],
+                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN
                         ),
                         ft.TextField(
-                                    hint_text="Busqueda...",
-                                    helper_text="No es necesario apretar (enter) busqueda automatica",
-                                    on_change=busqueda_inv,
-                                    width=page.window_width/2,
-                                    bgcolor="#2E2E3E",
-                                    color="#E0E0E0",
-                                    border_color="#38384A"
+                            hint_text="Busqueda...",
+                            helper_text="No es necesario apretar (enter) busqueda automatica",
+                            helper_style=ft.TextStyle(
+                                                color=ft.Colors.with_opacity(0.5, "#A0A0B0")
+                                            ),
+                            on_change=busqueda_inv,
+                            width=page.window_width/2,
+                            bgcolor="#2E2E3E",
+                            color="#E0E0E0"
+                            #order_color="#38384A"
+                        ),
+                        ft.Row(
+                            controls=[
+                                ft.Row(
+                                    controls=[
+                                        ft.Text(
+                                            value="Producto",
+                                            size=17
+                                        ),
+                                        ft.Row(
+                                            controls=[
+                                                spacing,
+                                                ft.Text(
+                                                    value="Fecha de V.",
+                                                    size=17
+                                                ),
+                                            ]
+                                        )
+                                    ],
+                                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                                    width=400
                                 ),
+                                spacing,
+                                ft.Row(
+                                    controls=[
+                                        ft.Text(
+                                            value="Cantidad",
+                                            size=17
+                                        ),
+                                        spacing,
+                                        ft.Text(
+                                            value="Añadir",
+                                            size=17
+                                        )
+                                    ],
+                                    spacing=20
+                                )
+                            ],
+                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                            spacing=20,
+                            width=600
+                        ),
                         columSearchInv
                     ],
                     width=1200,

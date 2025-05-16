@@ -1,7 +1,11 @@
 import flet as ft
 import pandas as pd
+import os 
 
-data = pd.read_csv("farmacia_liam.csv")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(script_dir, "farmacia_liam.csv")
+
+data = pd.read_csv(csv_path)
 dataCopy = data.copy()
 
 

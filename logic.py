@@ -8,7 +8,7 @@ csv_path = os.path.join(script_dir, "farmacia_liam.csv")
 data = pd.read_csv(csv_path)
 dataCopy = data.copy()
 
-
+list_add_element = []
 #acciones importantes
 def delate_car_buy(n):
     global cb
@@ -18,13 +18,26 @@ def delate_car_buy(n):
 
 def add_new_element(name,cnost,cant,fecha):
     global dataCopy
+    comp = dataCopy.loc[dataCopy["Nombre"]==name]
     new_date = {
         "Nombre":name,
         "Costo":cnost,
         "Cantidad":cant,
         "Fecha-V":fecha
     }
+    if new_date["Nombre"]==""or new_date["Costo"]=="" or new_date["Cantidad"]=="" or new_date["Fecha-V"]=="":
+        print("no existe")
+        return 0
+    
+    if not comp.empty:
+        print("ya existe")
+        return 0
+    
+    if name in list_add_element:
+        print("ya agregado")
+        return 0
     print(new_date)
+    list_add_element.append(name)
 
     dataCopy = pd.concat([dataCopy, pd.DataFrame([new_date])],ignore_index=True)
     print(dataCopy)
